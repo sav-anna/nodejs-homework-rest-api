@@ -1,5 +1,5 @@
 const { Contact } = require("../../models/contact");
-const { HttpError, ctrlWrapper } = require("../../helpers");
+const { HttpError } = require("../../helpers");
 
 const removeContact = async (req, res) => {
   const { id } = req.params;
@@ -11,6 +11,4 @@ const removeContact = async (req, res) => {
   res.json({ message: "contact deleted success" });
 };
 
-module.exports = {
-  removeContact: ctrlWrapper(removeContact),
-};
+module.exports = removeContact;
